@@ -36,4 +36,7 @@ export const config = {
 
   // Logging configuration
   logLevel: process.env.LOG_LEVEL || "info",
+
+  // Redis configuration
+  redisUrl: process.env.REDIS_URL || "redis://localhost:6379",
 };
