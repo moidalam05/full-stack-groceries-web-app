@@ -1,15 +1,11 @@
 import { config } from "./config/config.js";
 import { app } from "./app.js";
 import { connectDB } from "./config/db.js";
-import { connectRedis } from "./services/redisClient.js";
 import chalk from "chalk";
 import { logger } from "./config/logger.js";
 
-const startServer = async () => {
-  try {
-    await connectDB();
-    await connectRedis();
-
+connectDB()
+  .then(() => {
     app.listen(config.port, () => {
       logger.info(
         chalk.green.bold(
@@ -17,10 +13,8 @@ const startServer = async () => {
         )
       );
     });
-  } catch (error) {
-    logger.error(chalk.red("Startup failed:", error));
+  })
+  .catch((error) => {
+    logger.error(chalk.red("Database connection failed:", error));
     process.exit(1);
-  }
-};
-
-startServer();
+  });

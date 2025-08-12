@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import bcrypt from "bcryptjs";
+import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import { config } from "../config/config.js";
 import crypto from "crypto";
@@ -64,7 +64,6 @@ const userSchema = new mongoose.Schema(
     email: {
       type: String,
       required: [true, "Email is required"],
-      unique: true,
       lowercase: true,
       trim: true,
       match: [/^\S+@\S+\.\S+$/, "Please enter a valid email"],
@@ -134,7 +133,6 @@ const userSchema = new mongoose.Schema(
   { timestamps: true, versionKey: false }
 );
 
-userSchema.index({ email: 1 });
 userSchema.index({ "addresses.isDefault": 1 });
 userSchema.index({ email: 1 }, { unique: true, sparse: true });
 
