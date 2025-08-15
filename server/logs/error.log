@@ -1,7 +1,0 @@
-12-08-2025 20:02:06 [ERROR]: Cannot set property query of #<IncomingMessage> which has only a getter
-12-08-2025 20:03:55 [ERROR]: Invalid namespace specified: /Groceries App.users
-12-08-2025 20:04:52 [ERROR]: Invalid namespace specified: /GroceriesApp.users
-12-08-2025 20:05:06 [ERROR]: Invalid namespace specified: /GroceriesApp.users
-12-08-2025 20:07:53 [ERROR]: Cannot read properties of null (reading 'generateOtpCode')
-12-08-2025 20:20:22 [ERROR]: subject is not defined
-12-08-2025 20:26:31 [ERROR]: title is not defined
